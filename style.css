@@ -1,0 +1,23 @@
+body {
+    background-color: cadetblue;
+}
+h1 {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    
+}
+p {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    text-align: center;
+}
+
+.contenido {
+    border: 2px solid white;
+    
+}
