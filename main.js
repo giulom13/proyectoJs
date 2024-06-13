@@ -2,21 +2,23 @@ class Usuario {
   constructor(username, password) {
     this.username = username;
     this.password = password;
-    this.date = new Date(); //fecha en la que se da de alta el usuario
+    this.date = new Date(); // fecha en la que se da de alta el usuario
   }
 }
 
 let userBD = [];
 
+// Función para agregar usuarios
 function agregarUsuario(username, password) {
   let usuario = new Usuario(username, password);
   userBD.push(usuario);
 }
 
+// Función para verificar ingreso de usuarios
 function verificarIngreso(username, password) {
   for (let i = 0; i < userBD.length; i++) {
     if (userBD[i].username === username && userBD[i].password === password) {
-      return true; //Coincide los datos del array con los datos ingresados
+      return true; // si los datos coinciden devuelve true
     }
   }
   return false; // Usuario y/o contraseña incorrectos
@@ -25,13 +27,18 @@ function verificarIngreso(username, password) {
 agregarUsuario("Giulo", "palabra");
 agregarUsuario("Profe", "otrapalabra");
 
-let usernameInput = prompt("Ingrese su nombre de usuario");
-let passwordInput = prompt("Ingrese su contraseña");
+let accesoConcedido = false;
 
-if (verificarIngreso(usernameInput, passwordInput)) {
-  console.log("¡Bienvenido al sistema!");
-} else {
-  console.log("Usuario y/o contraseña incorrectos. Acceso denegado.");
+while (!accesoConcedido) {
+  let usernameInput = prompt("Ingrese su nombre de usuario").trim();
+  let passwordInput = prompt("Ingrese su contraseña").trim();
+
+  if (verificarIngreso(usernameInput, passwordInput)) {
+    alert("¡Bienvenido al sistema!");
+    accesoConcedido = true;
+  } else {
+    alert("Usuario y/o contraseña incorrectos. Acceso denegado.");
+  }
 }
 
 alert("Juguemos! Piedra, papel, tijera, lagarto, Spock! :)");
@@ -47,7 +54,7 @@ alert("El papel refuta a Spock.");
 alert("Spock vaporiza la piedra.");
 alert("La piedra aplasta a las tijeras.");
 
-alert("Estas listo?");
+alert("¿Estás listo?");
 
 let jugadorUno = prompt("Ingrese el nombre del jugador 1");
 let jugadorDos = prompt("Ingrese el nombre del jugador 2");
