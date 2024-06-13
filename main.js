@@ -2,7 +2,7 @@ class Usuario {
   constructor(username, password) {
     this.username = username;
     this.password = password;
-    date = Date(); //fecha en la que se da de alta el usuario
+    this.date = new Date(); //fecha en la que se da de alta el usuario
   }
 }
 
@@ -28,7 +28,7 @@ agregarUsuario("Profe", "otrapalabra");
 let usernameInput = prompt("Ingrese su nombre de usuario");
 let passwordInput = prompt("Ingrese su contraseña");
 
-if (verificarIngreso(usernameIngresado, passwordIngresado)) {
+if (verificarIngreso(usernameInput, passwordInput)) {
   console.log("¡Bienvenido al sistema!");
 } else {
   console.log("Usuario y/o contraseña incorrectos. Acceso denegado.");
