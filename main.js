@@ -30,8 +30,8 @@ agregarUsuario("Profe", "otrapalabra");
 let accesoConcedido = false;
 
 while (!accesoConcedido) {
-  let usernameInput = prompt("Ingrese su nombre de usuario").trim();
-  let passwordInput = prompt("Ingrese su contraseña").trim();
+  let usernameInput = prompt("Ingrese su nombre de usuario");
+  let passwordInput = prompt("Ingrese su contraseña");
 
   if (verificarIngreso(usernameInput, passwordInput)) {
     alert("¡Bienvenido al sistema!");
